@@ -5,9 +5,6 @@
   "scripts": {
     "start": "webpack-dev-server --open --mode development --config config/config.js",
     "build": "webpack --progress --mode production --config config/config.js",
-    "test": "react-scripts test",
-    "coverage": "react-scripts test --coverage --watchAll=false",
-    "coveralls": "coveralls < coverage/lcov.info",
     "eject": "react-scripts eject",
     "lint": "eslint --fix './src/**/*.{ts,tsx}'",
     "format": "prettier --write './src/**/*.{ts,tsx}'"
