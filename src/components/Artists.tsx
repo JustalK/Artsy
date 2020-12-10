@@ -13,7 +13,7 @@ const Ul = styled.ul`
 	justify-content: space-between;
 	flex-wrap: wrap;
 
-	@media (max-width: 768px) {
+	@media (max-width: 900px) {
 		display: block;
 	}
 `;

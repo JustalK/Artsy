@@ -1,11 +1,34 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 import ArtistDetails from 'src/components/ArtistDetails';
 import Gallery from 'src/components/Gallery';
 import { GetFullArtist } from 'src/services/ApiArtists';
 import { Container } from 'src/styles/Main';
 import Loading from 'src/components/Loading';
 import Error from 'src/components/Error';
+import styled from 'styled-components';
+import { Red, White, Gray } from 'src/styles/Color';
+
+/**
+ * Styled ul tag for displaying li in a column style
+ **/
+const Home = styled(Link)`
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100px;
+	background: ${Gray};
+	color: ${White};
+	height: 100px;
+	line-height: 170px;
+	text-align: center;
+	transform: translate(-50%,-50%) rotateZ(-45deg);
+	transition: 0.2s all;
+
+	&:hover {
+		background: ${Red};
+	}
+`;
 
 /**
  * Display the details page of an artist
@@ -30,6 +53,7 @@ const Details = (): JSX.Element => {
 	if (data) {
 		return (
 			<Container>
+				<Home to={'/'}>Home</Home>
 				<ArtistDetails artist={data.artist} />
 				<Gallery title={'Artworks of ' + data.artist.name} slug={data.artist.slug} />
 			</Container>

@@ -4,7 +4,7 @@ import { ArtistFullProps } from 'src/interfaces/Artist';
 const GET_ARTWORKS = gql`
 	query GetArtworks($slug: String!, $cursor: String!) {
 		artist(id: $slug) {
-			filterArtworksConnection(aggregations: [TOTAL], first: 10, after: $cursor) {
+			filterArtworksConnection(aggregations: [TOTAL], first: 12, after: $cursor) {
 				edges {
 					node {
 						internalID

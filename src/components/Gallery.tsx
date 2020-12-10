@@ -80,7 +80,7 @@ const Gallery = (props: GalleryProps): JSX.Element => {
 							title={artworks.title}
 							isListed={true}
 							image={artworks.image}
-							size="large"
+							size="medium"
 						/>
 					))}
 				</SectionGallery>

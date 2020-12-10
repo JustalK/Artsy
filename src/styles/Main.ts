@@ -11,11 +11,11 @@ export const Div = styled.div<{ centered?: boolean }>`
 
 export const Container = styled(Div)`
 	max-width: 1200px;
-	margin: 10rem auto;
+	margin: 8rem auto;
 
 	@media (max-width: 1200px) {
 		max-width: 900px;
-		margin: 10rem auto;
+		margin: 8rem auto;
 	}
 
 	@media (max-width: 900px) {
@@ -35,7 +35,7 @@ export const Section = styled.section`
 export const Title = styled.h1<{ centered?: boolean }>`
 	color: ${Red};
 	margin-bottom: 5rem;
-	font-size: 2rem;
+	font-size: 4rem;
 
 	${(props) =>
 		props.centered &&
@@ -50,7 +50,7 @@ export const Title = styled.h1<{ centered?: boolean }>`
 
 export const SubTitle = styled.h2<{ centered?: boolean }>`
 	color: ${Red};
-	font-size: 1.5rem;
+	font-size: 2rem;
 
 	${(props) =>
 		props.centered &&

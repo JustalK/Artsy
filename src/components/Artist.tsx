@@ -12,7 +12,7 @@ import { sanitize } from 'src/utils/Helper';
 const DivArtist = styled(Div)`
 	display: flex;
 	align-items: center;
-	width: 23rem;
+	width: 30rem;
 	margin: 1rem;
 	border-radius: 2rem;
 	border: 1px solid ${Gray};
@@ -22,10 +22,19 @@ const DivArtist = styled(Div)`
 		background: ${Gray};
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
+		width: 25rem;
+	}
+
+	@media (max-width: 900px) {
 		width: 100%;
 		margin: 2rem 0;
 	}
+`;
+
+const SubTitleArtist = styled(SubTitle)`
+	font-size: 1.5rem;
+	margin: 0;
 `;
 
 /**
@@ -48,7 +57,7 @@ const Artist = (props: ArtistSingleProps): JSX.Element => {
 				<Image image={props.artist.image} title={props.artist.image.title} size="square" rounded={true} />
 			</DivLeft>
 			<Div>
-				<SubTitle>{sanitize(props.artist.name)}</SubTitle>
+				<SubTitleArtist>{sanitize(props.artist.name)}</SubTitleArtist>
 				<TextLine>{sanitize(props.artist.bio)}</TextLine>
 				<TextLine>{sanitize(props.artist.birthday)}</TextLine>
 			</Div>

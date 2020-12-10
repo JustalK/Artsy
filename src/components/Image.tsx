@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageComponentProps } from 'src/interfaces/Image';
 import { Div, TextLine } from 'src/styles/Main';
-import { Red } from 'src/styles/Color';
+import { Red, Gray } from 'src/styles/Color';
 import styled from 'styled-components';
 
 /**
@@ -10,6 +10,11 @@ import styled from 'styled-components';
  **/
 const Img = styled.img<{ rounded?: boolean }>`
 	width: 80%;
+
+	${(props) =>
+		!props.rounded && `
+		border: 1px solid ${Gray};
+	`}
 
 	${(props) =>
 		props.rounded &&
@@ -26,9 +31,13 @@ const DivPicture = styled(Div)<{ isListed?: boolean }>`
 	${(props) =>
 		props.isListed &&
 		`
-		width: 50%;
+		width: 25%;
 		text-align: center;
 		margin-bottom: 50px;
+
+		@media (max-width: 768px) {
+			width: 50%;
+		}
 	`}
 `;
 

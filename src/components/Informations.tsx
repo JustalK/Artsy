@@ -1,6 +1,6 @@
 import React from 'react';
 import { InformationsProps, InformationProps } from 'src/interfaces/Information';
-import { GrayRowDark, GrayRowLight, White, Red } from 'src/styles/Color';
+import { Gray, GrayRowDark, GrayRowLight, White, Red } from 'src/styles/Color';
 import { SubTitle } from 'src/styles/Main';
 import { Div } from 'src/styles/Main';
 import styled from 'styled-components';
@@ -11,6 +11,7 @@ import styled from 'styled-components';
 const Table = styled.table`
 	border-spacing: 0;
 	margin-bottom: 4rem;
+	border: 1px solid ${Gray};
 `;
 
 /**
