@@ -18,9 +18,9 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,
-	"strictPropertyInitialization": false,
-	"baseUrl": "./"
+    "noEmit": true,
+    "strictPropertyInitialization": false,
+    "baseUrl": "./"
   },
   "include": [
     "src"
