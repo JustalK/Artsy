@@ -2,7 +2,7 @@ import { useQuery, gql } from '@apollo/client';
 import { ArtistFullProps } from 'src/interfaces/Artist';
 
 const GET_ARTWORKS = gql`
-	query GetArtworks($slug: String!, $cursor: String!) {
+	query getArtworks($slug: String!, $cursor: String!) {
 		artist(id: $slug) {
 			filterArtworksConnection(aggregations: [TOTAL], first: 12, after: $cursor) {
 				edges {
@@ -46,7 +46,7 @@ const GET_ARTWORKS = gql`
  * @params {string} cursor The cursor for offsetting the call
  * @return The call for the artworks
  **/
-export function GetArtworks(slug: string, cursor: string) {
+export function getArtworks(slug: string, cursor: string) {
 	return useQuery<ArtistFullProps, { slug: string; cursor: string }>(GET_ARTWORKS, {
 		variables: { slug: slug, cursor: cursor },
 	});

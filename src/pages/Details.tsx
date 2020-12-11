@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, Link} from 'react-router-dom';
 import ArtistDetails from 'src/components/ArtistDetails';
 import Gallery from 'src/components/Gallery';
-import { GetFullArtist } from 'src/services/ApiArtists';
+import { getFullArtist } from 'src/services/ApiArtists';
 import { Container } from 'src/styles/Main';
 import Loading from 'src/components/Loading';
 import Error from 'src/components/Error';
@@ -36,7 +36,7 @@ const Home = styled(Link)`
  **/
 const Details = (): JSX.Element => {
 	const { slug } = useParams();
-	const { loading, error, data } = GetFullArtist(slug);
+	const { loading, error, data } = getFullArtist(slug);
 
 	if (loading) {
 		return (

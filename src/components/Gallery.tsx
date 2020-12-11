@@ -5,7 +5,7 @@ import Error from 'src/components/Error';
 import { GalleryProps } from 'src/interfaces/Gallery';
 import { ArtworkProps, NodeProps } from 'src/interfaces/Artwork';
 import styled from 'styled-components';
-import { GetArtworks } from 'src/services/ApiArtworks';
+import { getArtworks } from 'src/services/ApiArtworks';
 import { Section, Div, SubTitle, Button } from 'src/styles/Main';
 
 /**
@@ -25,7 +25,7 @@ const SectionGallery = styled(Section)`
  **/
 const Gallery = (props: GalleryProps): JSX.Element => {
 	const [cursor, setCursor] = useState<string>('');
-	const { loading, error, data } = GetArtworks(props.slug, cursor);
+	const { loading, error, data } = getArtworks(props.slug, cursor);
 
 	/**
 	 * Will trigger the previous page if the page exist

@@ -3,7 +3,7 @@ import { HighlightsProps, HighlightsVariablesProps } from 'src/interfaces/Filter
 import { ArtistFullProps } from 'src/interfaces/Artist';
 
 const GET_POPULAR_ARTISTS = gql`
-	query GetPopularArtists($size: Int, $exclude: [String]) {
+	query getPopularArtists($size: Int, $exclude: [String]) {
 		highlights {
 			popularArtists(size: $size, excludeArtistIDs: $exclude) {
 				internalID
@@ -22,7 +22,7 @@ const GET_POPULAR_ARTISTS = gql`
 `;
 
 const GET_FULL_ARTIST = gql`
-	query GetFullArtist($slug: String!) {
+	query getFullArtist($slug: String!) {
 		artist(id: $slug) {
 			slug
 			name
@@ -69,7 +69,7 @@ const GET_FULL_ARTIST = gql`
  * @params {string[]} exclude Exclude id in the query
  * @return The call for the popular artist
  **/
-export function GetPopularArtist(size: number, exclude: string[] = []) {
+export function getPopularArtist(size: number, exclude: string[] = []) {
 	return useQuery<HighlightsProps, HighlightsVariablesProps>(GET_POPULAR_ARTISTS, {
 		variables: { size: size, exclude: exclude },
 	});
@@ -80,7 +80,7 @@ export function GetPopularArtist(size: number, exclude: string[] = []) {
  * @params {string} slug The slug of the artist
  * @return the call of the full artist
  **/
-export function GetFullArtist(slug: string) {
+export function getFullArtist(slug: string) {
 	return useQuery<ArtistFullProps, { slug: string }>(GET_FULL_ARTIST, {
 		variables: { slug: slug },
 	});

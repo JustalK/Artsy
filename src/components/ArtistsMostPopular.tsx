@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Artists from 'src/components/Artists';
 import { Button, Div } from 'src/styles/Main';
-import { GetPopularArtist } from 'src/services/ApiArtists';
+import { getPopularArtist } from 'src/services/ApiArtists';
 import Loading from 'src/components/Loading';
 import Error from 'src/components/Error';
 /**
@@ -19,7 +19,7 @@ const ARTSY_TOTAL_ARTISTS_LIMIT = 29;
  **/
 const ArtistsMostPopular = (): JSX.Element => {
 	const [ids, setIds] = useState<string[]>([]);
-	const { loading, error, data } = GetPopularArtist(TOTAL_ARTISTS, ids);
+	const { loading, error, data } = getPopularArtist(TOTAL_ARTISTS, ids);
 
 	/**
 	 * Will trigger the previous set of popular artist
